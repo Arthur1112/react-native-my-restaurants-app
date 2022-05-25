@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator , ImageBackground} from 'react-native';
 import { useEffect, useState } from 'react';
 
 export default function App() {
@@ -21,11 +21,16 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {allRestaurants?.map((singleRest) => {
-        return <Text key={singleRest.id}>{singleRest.name}</Text>
-      })}
-      <Text>Hey Class</Text>
-      <StatusBar style="auto" />
+      <ImageBackground resizeMode='cover'> 
+        { allRestaurants ? (
+            allRestaurants?.map((singleRest) => {return <Text key={singleRest.id}>{singleRest.name}</Text>
+        }))
+        : <ActivityIndicator size='large' color='red' />
+      
+      }
+        <Text>Hey Class</Text>
+        <StatusBar style="auto" />
+      </ImageBackground>
     </View>
   );
 }
