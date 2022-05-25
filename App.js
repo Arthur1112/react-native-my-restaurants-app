@@ -24,12 +24,12 @@ export default function App() {
     <View style={styles.container}>
       <ImageBackground resizeMode='cover' source={image} style={styles.container}>
         { allRestaurants ? (
-            allRestaurants?.map((singleRest) => {return <Text key={singleRest.id} style={styles.text} >{singleRest.name}</Text>
+            allRestaurants?.map((singleRest) => {return <Text key={singleRest.id} style={styles.restaurantsName} >{singleRest.name}</Text>
         }))
         : <ActivityIndicator size='large' color='red' />
       
       }
-        <Text style={styles.text}>Hey Class</Text>
+        <Text style={styles.text}>Arthurs Restaurants</Text>
         <StatusBar style="auto" />
       </ImageBackground>
     </View>
@@ -46,8 +46,13 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontSize: '30',
-    backgroundColor: 'black'
-
+    fontSize: 30,
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+  },
+  restaurantsName: {
+    color: 'white',
+    fontSize: 50,
+    fontWeight: 'bold',
   }
 });
