@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ActivityIndicator, ImageBackground} from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, ImageBackground, ScrollView} from 'react-native';
 import { useEffect, useState } from 'react';
 
 const image = {uri: 'https://png.pngtree.com/background/20210709/original/pngtree-food-western-food-steak-tomato-picture-image_941801.jpg'}
@@ -23,12 +23,14 @@ export default function App() {
   return (
     <View style={styles.container}>
       <ImageBackground resizeMode='cover' source={image} style={styles.container}>
+        <ScrollView>
         { allRestaurants ? (
             allRestaurants?.map((singleRest) => {return <Text key={singleRest.id} style={styles.restaurantsName} >{singleRest.name}</Text>
         }))
         : <ActivityIndicator size='large' color='red' />
       
       }
+      </ScrollView>
         <Text style={styles.text}>Arthurs Restaurants</Text>
         <StatusBar style="auto" />
       </ImageBackground>
@@ -52,7 +54,8 @@ const styles = StyleSheet.create({
   },
   restaurantsName: {
     color: 'white',
-    fontSize: 50,
+    fontSize: 60,
     fontWeight: 'bold',
+    marginVertical: 165,
   }
 });
