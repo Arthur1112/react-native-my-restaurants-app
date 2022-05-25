@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ActivityIndicator , ImageBackground} from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, ImageBackground} from 'react-native';
 import { useEffect, useState } from 'react';
 
+const image = {uri: 'https://png.pngtree.com/background/20210709/original/pngtree-food-western-food-steak-tomato-picture-image_941801.jpg'}
 export default function App() {
   const [allRestaurants, setAllRestaurants] = useState()
 
@@ -21,14 +22,14 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <ImageBackground resizeMode='cover'> 
+      <ImageBackground resizeMode='cover' source={image} style={styles.container}>
         { allRestaurants ? (
-            allRestaurants?.map((singleRest) => {return <Text key={singleRest.id}>{singleRest.name}</Text>
+            allRestaurants?.map((singleRest) => {return <Text key={singleRest.id} style={styles.text} >{singleRest.name}</Text>
         }))
         : <ActivityIndicator size='large' color='red' />
       
       }
-        <Text>Hey Class</Text>
+        <Text style={styles.text}>Hey Class</Text>
         <StatusBar style="auto" />
       </ImageBackground>
     </View>
@@ -38,8 +39,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width:'100%',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text: {
+    color: 'white',
+    fontSize: '30',
+    backgroundColor: 'black'
+
+  }
 });
