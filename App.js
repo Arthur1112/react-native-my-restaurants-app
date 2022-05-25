@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ActivityIndicator, ImageBackground, ScrollView, Image} from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, ImageBackground, ScrollView, Image,} from 'react-native';
 import { useEffect, useState } from 'react';
+import { Button } from "@rneui/themed";
 
 const image = {uri: 'https://png.pngtree.com/background/20210709/original/pngtree-food-western-food-steak-tomato-picture-image_941801.jpg'}
 export default function App() {
@@ -27,7 +28,7 @@ export default function App() {
         { allRestaurants ? (
             allRestaurants?.map(singleRest => (
             <>
-            <Text key={singleRest.id} style={styles.restaurantsName} >{singleRest.name}</Text>
+            <Text key={singleRest.id} style={styles.restaurantsName} >{singleRest.name} / {singleRest.cuisine}</Text>
             <Image 
             source={{uri:singleRest.image}}
             style={{width: '100%', height: 100}} />
@@ -37,6 +38,7 @@ export default function App() {
       
       }
       </ScrollView>
+      <Button title="Press Me" color='white' style={styles.button} />
         <Text style={styles.text}>Arthurs Restaurants</Text>
         <StatusBar style="auto" />
       </ImageBackground>
@@ -60,8 +62,11 @@ const styles = StyleSheet.create({
   },
   restaurantsName: {
     color: 'white',
-    fontSize: 60,
+    fontSize: 40,
     fontWeight: 'bold',
-    marginVertical: 165,
+    marginVertical: 30,
+  },
+  button: {
+    color: 'red',
   }
 });
