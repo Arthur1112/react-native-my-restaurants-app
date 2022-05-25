@@ -2,9 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  fetch('https://my-first-firestore-as.web.app/restaurants')
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Hey Class</Text>
       <StatusBar style="auto" />
     </View>
   );
