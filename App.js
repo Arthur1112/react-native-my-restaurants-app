@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import {Text, View, ActivityIndicator, ImageBackground, ScrollView, Image} from 'react-native';
+import {Text, View, ActivityIndicator, ImageBackground, ScrollView} from 'react-native';
 import { useEffect, useState } from 'react';
 import RestaurantCard from './src/components/RestaurantCard';
 import styles from './src/styles';
