@@ -9,6 +9,7 @@ export default StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+        marginHorizontal: 0,
     },
     restaurantCard: {
         width: '100%',

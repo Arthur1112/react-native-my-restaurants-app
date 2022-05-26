@@ -3,6 +3,7 @@ import {Text, View, ActivityIndicator, ImageBackground, ScrollView, Image} from 
 import { useEffect, useState } from 'react';
 import RestaurantCard from './src/components/RestaurantCard';
 import styles from './src/styles';
+import { SafeAreaView } from 'react-native';
 
 const bgImage = {uri: 'https://png.pngtree.com/background/20210709/original/pngtree-food-western-food-steak-tomato-picture-image_941801.jpg'}
 
@@ -18,7 +19,9 @@ export default function App() {
   }, [])
 
   return (
+    
     <View style={styles.container}>
+      <SafeAreaView>
       <ImageBackground resizeMode='cover' source={bgImage} style={styles.container}>
         <ScrollView>
         { !allRestaurants 
@@ -31,6 +34,7 @@ export default function App() {
         <Text style={styles.text}>Arthurs Restaurants</Text>
         <StatusBar style="auto" />
       </ImageBackground>
+      </SafeAreaView>
     </View>
   );
 }
