@@ -24,7 +24,7 @@ export default function Home({ navigation }){
             {!allRestaurants
                 ?<ActivityIndicator size ='large' color='orange'/>
                 : allRestaurants.map(singleRest => (
-                    <TouchableOpacity key={singleRest.id} onPress={() => navigation.navigate('Details')}>
+                    <TouchableOpacity key={singleRest.id} onPress={() => handlePress(singleRest)}>
                     <RestaurantCard singleRest={singleRest} />
                     </TouchableOpacity>
                 ))
