@@ -14,7 +14,7 @@ export default function Home(){
         <ScrollView>
             {!allRestaurants
                 ?<ActivityIndicator size ='large' color='orange'/>
-                : allRestaurants.map(single => (
+                : allRestaurants.map(singleRest => (
                     <RestaurantCard key={singleRest.id} singleRest={singleRest} />
                 ))
             }
