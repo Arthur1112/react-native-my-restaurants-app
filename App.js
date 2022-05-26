@@ -21,8 +21,8 @@ export default function App() {
   return (
     
     <View style={styles.container}>
-      <SafeAreaView>
       <ImageBackground resizeMode='cover' source={bgImage} style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <ScrollView>
         { !allRestaurants 
             ? <ActivityIndicator size='large' color='red' />
@@ -31,10 +31,10 @@ export default function App() {
         ))
       }
       </ScrollView>
+      </SafeAreaView>
         <Text style={styles.text}>Arthurs Restaurants</Text>
         <StatusBar style="auto" />
       </ImageBackground>
-      </SafeAreaView>
     </View>
   );
 }

@@ -3,10 +3,9 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
     container: {
-        marginVertical: 50,
         flex: 1,
         width:'100%',
-        backgroundColor: '#fff',
+        // backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
         marginHorizontal: 0,
@@ -15,7 +14,8 @@ export default StyleSheet.create({
         width: '100%',
         marginVertical: 16,
         backgroundColor: '#fff',
-        color: '#444', 
+        color: '#444',
+        borderRadius: 4,
     },
     text: {
         color: 'white',
@@ -24,8 +24,22 @@ export default StyleSheet.create({
         fontStyle: 'italic',
     },
     restaurantsName: {
-        fontSize: 30,
-        // fontWeight: 'bold',
-        marginVertical: 15,
-    }
+        marginHorizontal: 12,
+        fontSize: 24,
+        fontWeight: '600',
+        marginTop: 15,
+    },
+    cuisine: {
+        marginHorizontal: 12,
+        fontSize: 16,
+        fontWeight: '100',
+        color: '#ff3333',
+    },
+    address: {
+        marginHorizontal: 12,
+        fontSize: 14, 
+        fontWeight: '300',
+        color: '#303030',
+        marginBottom: 8,
+    },
     });
