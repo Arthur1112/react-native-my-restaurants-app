@@ -3,8 +3,8 @@ import styles from "../styles";
 
 export default function Details () {
     return (
-        <View>
-            <Image source={{uri: }}
+        <View style={styles.restaurantCard}>
+            <Text style={styles.restaurantsName}>Details Page</Text>
         </View>
     )
 }
