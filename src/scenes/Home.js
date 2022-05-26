@@ -4,7 +4,7 @@ import { SingleRestContext } from "../../App";
 import RestaurantCard from "../components/RestaurantCard";
 
 export default function Home({ navigation }){
-    const [allRestaurants, setAllRestaurants] = useState();
+    const [allRestaurants,setAllRestaurants] = useState();
     const {setCurrentRest} = useContext(SingleRestContext)
 
     useEffect(() => {
@@ -16,7 +16,7 @@ export default function Home({ navigation }){
 
     const handlePress = (singleRest) => {
         setCurrentRest(singleRest);
-        navigation.navigate('Details')
+        navigation.navigate('Details');
     }
 
     return (
