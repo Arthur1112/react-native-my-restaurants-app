@@ -16,7 +16,7 @@ export default function App() {
   const [currentRest, setCurrentRest] = useState();
 
   return (
-    <SingleRestContext.Provider>
+    <SingleRestContext.Provider value={{ currentRest, setCurrentRest }}>
       <NavigationContainer>
           <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name='Home' component={Home} options={{title: 'Local Restaurants'}}/>
