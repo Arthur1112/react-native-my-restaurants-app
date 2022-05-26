@@ -13,6 +13,12 @@ export default function Home({ navigation }){
             .then(setAllRestaurants)
             .catch(console.error)
     }, [])
+
+    const handlePress = (singleRest) => {
+        setCurrentRest(singleRest);
+        navigation.navigate('Details')
+    }
+
     return (
         <ScrollView>
             {!allRestaurants
