@@ -13,7 +13,7 @@ export default function App() {
   useEffect(() => {
     fetch('https://my-first-firestore-as.web.app/restaurants')
       .then(response => response.json())
-      .then(setAllRestaurants)
+      // .then(setAllRestaurants)
       .then(data => setAllRestaurants(data))
       .catch(console.error)
   }, [])
