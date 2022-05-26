@@ -12,7 +12,7 @@ export default StyleSheet.create({
     },
     restaurantCard: {
         width: '100%',
-        marginVertical: 16,
+        marginVertical: 10,
         backgroundColor: '#fff',
         color: '#444',
         borderRadius: 4,
