@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import {Text, View, ActivityIndicator, ImageBackground, ScrollView} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import RestaurantCard from './src/components/RestaurantCard';
 import styles from './src/styles';
@@ -19,7 +20,7 @@ export default function App() {
   }, [])
 
   return (
-    
+    <NavigationContainer>
     <View style={styles.container}>
       <ImageBackground resizeMode='cover' source={bgImage} style={styles.container}>
       <SafeAreaView style={styles.container}>
@@ -32,9 +33,9 @@ export default function App() {
       }
       </ScrollView>
       </SafeAreaView>
-        <Text style={styles.text}>Arthurs Restaurants</Text>
         <StatusBar style="auto" />
       </ImageBackground>
     </View>
+    </NavigationContainer>
   );
 }
